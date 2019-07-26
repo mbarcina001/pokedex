@@ -10,6 +10,7 @@ export class PokemonPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="this.pokemonList!=null">
   <ion-list>
-    <ion-item *ngFor="let pokemon of this.pokemonList">
+    <ion-item *ngFor="let pokemon of this.pokemonList.results">
       <ion-label>{{pokemon.name}}</ion-label>
     </ion-item>
   </ion-list>
