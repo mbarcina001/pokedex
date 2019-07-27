@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pokemon</ion-title>
+    <ion-title>{{this.pokemonName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="this.pokemon !=null">
+  <img [src]="this.pokemon.sprites.front_default">
+  <p>{{this.pokemon.name}}</p>
+  <p>{{this.pokemon.base_experience}}</p>
+  <p>{{this.pokemon.height}}</p>
+  <p>{{this.pokemon.id}}</p>
+  <p>{{this.pokemon.weight}}</p>
+
+  <ul>
+    <li *ngFor="let type of this.pokemon.types">{{type.type.name}}</li>
+  </ul>
+  <ul>
+    <li *ngFor="let ability of this.pokemon.abilities">{{ability.ability.name}}</li>
+  </ul>
+  <ul>
+    <li *ngFor="let move of this.pokemon.moves">{{move.move.name}}</li>
+  </ul>
 
 </ion-content>

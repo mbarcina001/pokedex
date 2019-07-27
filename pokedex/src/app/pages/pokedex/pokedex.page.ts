@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokedexService } from 'src/app/services/pokedex.service';
 import { PokemonList } from 'src/app/models/pokemon-list.model';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex',
@@ -11,7 +12,7 @@ export class PokedexPage implements OnInit {
 
   private pokemonList: PokemonList;
 
-  constructor(private pokedexService: PokedexService) { }
+  constructor(private pokedexService: PokedexService, private router:Router) { }
 
   ngOnInit() {
     this.pokedexService.getPokemonList().subscribe(
@@ -22,6 +23,16 @@ export class PokedexPage implements OnInit {
         console.log("pokedexService.getPokemonList() - err: " + JSON.stringify(err));
       }
     )
+  }
+
+
+  public openPokemonDetail(pPokemonName: string){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        pokemonName: pPokemonName
+      }
+    };
+    this.router.navigate(['pokemon'], navigationExtras);
   }
 
 }
