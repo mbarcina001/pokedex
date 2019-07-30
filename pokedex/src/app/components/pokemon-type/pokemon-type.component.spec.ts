@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PokedexPokemonComponent } from './pokedex-pokemon.component';
+import { PokemonTypeComponent } from './pokemon-type.component';
 
-describe('PokedexPokemonComponent', () => {
-  let component: PokedexPokemonComponent;
-  let fixture: ComponentFixture<PokedexPokemonComponent>;
+describe('PokemonTypeComponent', () => {
+  let component: PokemonTypeComponent;
+  let fixture: ComponentFixture<PokemonTypeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokedexPokemonComponent ],
+      declarations: [ PokemonTypeComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PokedexPokemonComponent);
+    fixture = TestBed.createComponent(PokemonTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

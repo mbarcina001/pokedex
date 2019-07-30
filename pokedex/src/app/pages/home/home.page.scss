@@ -1,19 +1,18 @@
 ion-content{
     --background: #fff url('src/assets/img/beach-back.jpg') no-repeat center center / cover;
+    position:relative;
 
-    .logo {
-        mask-size: contain;
-        mask-position: 50% 50%;
-        mask-repeat: no-repeat;
-        background: currentColor;
-        width: 1em;
-        height: 1em;
-        margin-left: 6px !important;
-        color: #3399ff !important;
-        mask-image: url('src/assets/img/pokedex-logo-letters.png');
+    .languages{
+        text-align: right;
+
+        .select-language{
+            width:2em;
+            height:2em;
+            display:inline-block;
+        }
     }
 
-    img{
+    .logo{
         margin:auto;
         left:0;
         right:0;

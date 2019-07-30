@@ -9,18 +9,36 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient  } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 import { PokedexService } from 'src/app/services/pokedex.service';
 
+export function customTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+  ],
   entryComponents: [],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+         provide: TranslateLoader,
+         useFactory: customTranslateLoader,
+         deps: [HttpClient]
+      }
+    }),
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

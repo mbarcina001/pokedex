@@ -1,6 +1,21 @@
 <ion-content>
   <div class="ion-padding">
-    <img src="assets/img/pokedex-logo-blue.png">
-    <ion-button class="pokedex-button" routerLink="/pokedex">Enter Pokedex</ion-button>
+    <div class="languages" *ngIf="this.language!=null">
+      <div class="select-language select-english-language" *ngIf="this.language!=='en'" (click)="changeLanguage('en')">
+        <img src="assets/img/uk-flag.png">
+      </div>
+      <div class="select-language select-spanish-language" *ngIf="this.language!=='es'" (click)="changeLanguage('es')">
+        <img src="assets/img/spain-flag.png">
+      </div>
+      <div class="select-language select-german-language" *ngIf="this.language!=='ge'" (click)="changeLanguage('ge')">
+        <img src="assets/img/german-flag.png">
+      </div>
+    </div>
+    <div class="loading-languages" *ngIf="this.language==null">
+      <span>Loading</span>
+    </div>
+
+    <img class="logo" src="assets/img/pokedex-logo-blue.png">
+    <ion-button class="pokedex-button" routerLink="/pokedex">{{ 'PAGES.HOME.ENTER_BUTTON' | translate }}</ion-button>
   </div>
 </ion-content>
