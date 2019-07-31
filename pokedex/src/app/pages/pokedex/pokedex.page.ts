@@ -11,7 +11,7 @@ import { Events } from '@ionic/angular';
 })
 export class PokedexPage implements OnInit {
 
-  private pokemonList: PokemonList;
+  public pokemonList: PokemonList;
 
   /* Pagination */
   private elemsPerPage = 20;
@@ -37,6 +37,7 @@ export class PokedexPage implements OnInit {
         this.events.publish('hideLoader');
       }, (err) => {
         console.log("pokedexService.getPokemonList() - err: " + JSON.stringify(err));
+        this.events.publish('showErrorModal');
       }
     )
   }

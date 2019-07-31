@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePage implements OnInit {
 
-  private language: string;
+  public language: string;
 
   constructor(private storage: Storage,  private translate: TranslateService) {}
 

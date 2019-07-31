@@ -1,5 +1,10 @@
 {
     "PAGES": {
+        "ERROR": {
+            "ERROR_MESSAGE": "An error happened (GER)",
+            "ERROR_TITLE": "Error (GER)",
+            "GO_HOME_BUTTON": "Go back home (GER)"
+        },
         "HOME": {
             "ENTER_BUTTON": "Enter Pokedex (GER)"
         },

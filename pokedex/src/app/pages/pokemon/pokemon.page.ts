@@ -15,10 +15,10 @@ import { PokemonDescription } from 'src/app/models/pokemon-description.model';
 })
 export class PokemonPage {
 
-  private pokemonName: string;
-  private pokemon: Pokemon;
+  public pokemonName: string;
+  public pokemon: Pokemon;
   private pokemonDescription: PokemonDescription;
-  private pokemonDescriptionText: string;
+  public pokemonDescriptionText: string;
 
   constructor(private route: ActivatedRoute, private router: Router, private pokedexService: PokedexService, private events: Events, private storage: Storage) { 
     this.route.queryParams.subscribe(params => {
@@ -36,7 +36,8 @@ export class PokemonPage {
         (response) => {
           this.pokemon = response;
         },(err) => {
-        console.log("pokedexService.getPokemonData() - err: " + JSON.stringify(err));
+          console.log("pokedexService.getPokemonData() - err: " + JSON.stringify(err));
+          this.events.publish('showErrorModal');
         }
       ),
       this.pokedexService.getPokemonDescription(this.pokemonName).subscribe(
@@ -44,7 +45,8 @@ export class PokemonPage {
           this.pokemonDescription = response;
           this.getDescriptionByLanguage();
         },(err) => {
-        console.log("pokedexService.getPokemonDescription() - err: " + JSON.stringify(err));
+          console.log("pokedexService.getPokemonDescription() - err: " + JSON.stringify(err));
+          this.events.publish('showErrorModal');
         }
       )
     ]).then(() => {

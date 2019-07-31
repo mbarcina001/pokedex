@@ -16,6 +16,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 
 import { PokedexService } from 'src/app/services/pokedex.service';
+import { ErrorModalPageModule } from './pages/error-modal/error-modal.module';
 
 export function customTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,7 +39,8 @@ export function customTranslateLoader(http: HttpClient) {
          deps: [HttpClient]
       }
     }),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ErrorModalPageModule
   ],
   providers: [
     StatusBar,

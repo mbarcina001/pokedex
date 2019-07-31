@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'PAGES.ERROR.ERROR_TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/img/error.png">
+  <p>{{ 'PAGES.ERROR.ERROR_MESSAGE' | translate }}</p>
+  <ion-button class="go-home-button" routerLink="/home" (click)="closeModal()">{{ 'PAGES.ERROR.GO_HOME_BUTTON' | translate }}</ion-button>
+</ion-content>

@@ -1,5 +1,10 @@
 {
     "PAGES": {
+        "ERROR": {
+            "ERROR_MESSAGE": "Ocurrió un error",
+            "ERROR_TITLE": "Error",
+            "GO_HOME_BUTTON": "Volver a la home"
+        },
         "HOME": {
             "ENTER_BUTTON": "Acceder a la Pokedex"
         },

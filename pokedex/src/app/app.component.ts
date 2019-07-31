@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
-import { Platform, LoadingController, Events } from '@ionic/angular';
+import { Platform, LoadingController, Events, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
+import { ErrorModalComponent } from './components/error-modal/error-modal.component';
+import { ErrorModalPage } from './pages/error-modal/error-modal.page';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,8 @@ export class AppComponent {
     private translate: TranslateService,
     private storage: Storage,
     private loadingController: LoadingController,
-    private events: Events
+    private events: Events,
+    private modalController: ModalController
   ) {
     this.initializeApp();
     let userLang = navigator.language.split('-')[0];
@@ -33,6 +36,14 @@ export class AppComponent {
 
     this.events.subscribe('hideLoader', () => {
       this.hideLoader();
+    });
+
+    this.events.subscribe('showErrorModal', () => {
+      this.showErrorModal();
+    });
+
+    this.events.subscribe('hideErrorModal', () => {
+      this.hideErrorModal();
     });
   }
 
@@ -58,5 +69,16 @@ export class AppComponent {
     setTimeout(() => {
       this.loadingController.dismiss();
     }, 500);
+  }
+
+  async showErrorModal() {
+    const modal = await this.modalController.create({
+      component: ErrorModalPage
+    });
+    return await modal.present();
+  }
+
+  async hideErrorModal() {
+    await this.modalController.dismiss();
   }
 }

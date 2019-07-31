@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: 'pokedex', loadChildren: './pages/pokedex/pokedex.module#PokedexPageModule' },
-  { path: 'pokemon', loadChildren: './pages/pokemon/pokemon.module#PokemonPageModule' },
+  { path: 'pokemon', loadChildren: './pages/pokemon/pokemon.module#PokemonPageModule' }
 ];
 
 @NgModule({
