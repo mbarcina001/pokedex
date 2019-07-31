@@ -2,6 +2,20 @@
     "PAGES": {
         "HOME": {
             "ENTER_BUTTON": "Enter Pokedex"
+        },
+        "POKEDEX": {
+            "NEXT": "Next",
+            "PREVIOUS": "Previous"
+        },
+        "POKEMON": {
+            "BASE_EXP": "Base exp",
+            "WEIGHT": "Weight",
+            "HEIGHT": "Height"
+        }
+    },
+    "COMPONENTS": {
+        "LOADER": {
+            "LOADING": "Loading"
         }
     }
 }

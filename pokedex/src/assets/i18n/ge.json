@@ -2,6 +2,20 @@
     "PAGES": {
         "HOME": {
             "ENTER_BUTTON": "Enter Pokedex (GER)"
+        },
+        "POKEDEX": {
+            "NEXT": "Next (GER)",
+            "PREVIOUS": "Previous (GER)"
+        },
+        "POKEMON": {
+            "BASE_EXP": "Base exp (GER)",
+            "WEIGHT": "Weight (GER)",
+            "HEIGHT": "Height (GER)"
+        }
+    },
+    "COMPONENTS": {
+        "LOADER": {
+            "LOADING": "Loading (GER)"
         }
     }
 }

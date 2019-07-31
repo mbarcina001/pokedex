@@ -1,3 +1,17 @@
 .pokemon-name-label{
     text-transform: capitalize;
 }
+
+.navigation-button{
+    display:inline-block;
+
+    &.prev{
+        float:left;
+        padding-left:0.5em;
+    }
+
+    &.next{
+        float:right;
+        padding-right:0.5em;
+    }
+}

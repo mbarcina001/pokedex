@@ -3,33 +3,39 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{this.pokemonName}}</ion-title>
+    <ion-title class="header">{{this.pokemonName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content *ngIf="this.pokemon !=null">
-  <ion-grid>
-    <ion-row>
-      <ion-col class="pokemon-img-col">
-        <img [src]="this.pokemon.sprites.front_default">
-      </ion-col>
-      <ion-col>
-        <p class="pokemon-name">{{this.pokemon.name}}</p>
-        <pokemon-type *ngFor="let type of this.pokemon.types" [type]="type.type.name"></pokemon-type>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <div class="pokemon-body">
-      <p>{{this.pokemon.base_experience}}</p>
-      <p>{{this.pokemon.height}}</p>
-      <p>{{this.pokemon.weight}}</p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid class="pokemon-header">
+        <ion-row>
+          <ion-col class="pokemon-img-col">
+            <img [src]="this.pokemon.sprites.front_default">
+          </ion-col>
+          <ion-col>
+            <p class="pokemon-name font-weight-bold title">{{this.pokemon.name}}</p>
+            <pokemon-type *ngFor="let type of this.pokemon.types" [type]="type.type.name"></pokemon-type>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
   
-  <ul>
+    <ion-card-content>
+      <p class="font-weight-light pokemon-description">{{this.pokemonDescriptionText}}</p>
+      <p>Base exp: {{this.pokemon.base_experience}}</p>
+      <p>Height: {{this.pokemon.height}}</p>
+      <p>Weight: {{this.pokemon.weight}}</p>
+    </ion-card-content>
+  </ion-card>
+  
+  <!--<ul>
     <li *ngFor="let ability of this.pokemon.abilities">{{ability.ability.name}}</li>
   </ul>
   <ul>
     <li *ngFor="let move of this.pokemon.moves">{{move.move.name}}</li>
-  </ul>
+  </ul>-->
 
 </ion-content>

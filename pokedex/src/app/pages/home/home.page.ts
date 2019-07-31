@@ -15,7 +15,6 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.storage.get('language').then((val) => {
-      console.log(val);
       this.language = val;
     });
   }
@@ -24,6 +23,7 @@ export class HomePage implements OnInit {
     console.log("Change Language: " + pLanguage);
     this.language = pLanguage;
     this.translate.use(pLanguage);
+    this.storage.set('language', pLanguage);
   }
 
 }

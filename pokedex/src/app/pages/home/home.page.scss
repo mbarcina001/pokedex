@@ -4,6 +4,7 @@ ion-content{
 
     .languages{
         text-align: right;
+        margin-top:1em;
 
         .select-language{
             width:2em;
@@ -26,7 +27,6 @@ ion-content{
         right:0;
         bottom:8em;
         margin:auto;
-        width:auto;
-        padding: 0 2em;
+        max-width: 18em;
     }
 }

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Pokedex</ion-title>
+    <ion-title class="header">Pokedex</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,4 +13,7 @@
       <ion-label class="pokemon-name-label" (click)="this.openPokemonDetail(pokemon.name)">{{pokemon.name}}</ion-label>
     </ion-item>
   </ion-list>
+
+  <ion-button class="navigation-button prev" [disabled]="this.actualPage==1" (click)="this.navigate('previous')">{{ 'PAGES.POKEDEX.PREVIOUS' | translate }}</ion-button>
+  <ion-button class="navigation-button next" [disabled]="this.actualPage==this.totalPages" (click)="this.navigate('next')">{{ 'PAGES.POKEDEX.NEXT' | translate }}</ion-button>
 </ion-content>

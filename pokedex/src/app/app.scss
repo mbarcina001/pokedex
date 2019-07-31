@@ -5,9 +5,36 @@
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
 
-ion-button{
-    --background: #2962FF;
-    --background-hover: #0044ff;
+$custom-font-size: 15px;
+
+*{
+    font-family: 'Montserrat';
+    font-size: $custom-font-size;
+    --color: var(--ion-color-dark);
+}
+
+.header{
+    font-size: $custom-font-size * 1.25;
+}
+
+.title{
+    font-size: $custom-font-size * 1.5;
+}
+
+.font-weight-light{
+    font-weight:300;
+}
+
+.font-weight-bold{
+    font-weight:700;
+}
+
+a, .header{
+    --color: var(--ion-color-primary);
+}
+
+ion-button, ion-back-button{
+    --background: var(--ion-color-primary);
     color:white;
 }
 
